@@ -6,9 +6,10 @@ if (process.argv.length<3) {
 }
 
 const password = process.argv[2]
+const encoded = encodeURIComponent(password)
 
 const url =
-  `mongodb+srv://fullstackopen:${password}@notes.ej9buoj.mongodb.net/?retryWrites=true&w=majority`
+  `mongodb+srv://fullstackopen:${encoded}@notes.ej9buoj.mongodb.net/?retryWrites=true&w=majority`
 
 mongoose.set('strictQuery',false)
 mongoose.connect(url)
